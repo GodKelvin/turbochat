@@ -3,7 +3,6 @@
 
 
 <% if current_user %>
-
     <%= link_to "Comece a falar", rooms_path %>
     <%= button_to "Logout", destroy_user_session_path, method: :delete %>
 <% else %>

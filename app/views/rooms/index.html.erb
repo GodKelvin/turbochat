@@ -9,8 +9,8 @@
     </div>
 
     <h4> Rooms </h4>
-    <%= render "layouts/new_room_form" %>
     <%= turbo_stream_from "rooms"%>
+    <%= render "layouts/new_room_form" %>
     <div id="rooms">
       <%= render @rooms %>
     </div>

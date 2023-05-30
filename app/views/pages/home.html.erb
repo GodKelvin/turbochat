@@ -1,11 +1,78 @@
-<h1> TurboChat</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<style>
+  .links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    place-items: center;
+  }
 
+  .titulo{
+    text-align: center;
+    height: 10vh;
+    font-family: cursive;
+    padding-top: 20vh;
+  }
 
-<% if current_user %>
-    <%= link_to "Comece a falar", rooms_path %>
-    <%= button_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-<% end %>
+  .notas-rodape{
+    text-align: center;
+  }
+
+  .btn-login{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .btn-sign{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28868a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .btn-logout{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e86738;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid #e86738; 
+  }
+
+  .btn-falar{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0da12f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+</style>
+
+<h1 class="titulo">Chat dos Crias</h1>
+<div class="links">
+  <% if current_user %>
+      <%= link_to "Comece a falar", rooms_path, class: "btn-falar" %>
+      <br>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn-logout" %>
+  <% else %>
+      <%= link_to "Login", new_user_session_path, class: "btn-login"%>
+      <br>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn-sign"%>
+  <% end %>
+</div>
+
+<p class="notas-rodape">Nós criptografamos nossas mensagens e não temos meios de fornecer para terceiros. Para nós, sua privacidade é importante.</p>

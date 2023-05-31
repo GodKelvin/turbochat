@@ -1,3 +1,19 @@
-<div> 
-    <%= link_to user.email, user %>
+<style>
+  .link-user a {
+    text-decoration: none; /* Remove o sublinhado */
+    /* Adicione outros estilos para personalizar o link conforme desejado */
+    color: #05ffc5; /* Define a cor do texto do link */
+    font-weight: bold; /* Define a fonte negrito */
+  }
+
+  .link-user a:hover {
+    /* Estilos para quando o link é hover (quando o mouse está sobre ele) */
+    /* Por exemplo, você pode alterar a cor de fundo ou a cor do texto */
+    background-color: #0000;
+    color: #deda00;
+  }
+</style>
+
+<div class="link-user">
+  💬 <%= link_to user.email, user %>
 </div>

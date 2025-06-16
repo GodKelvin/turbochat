@@ -15,7 +15,7 @@ jobs:
           script: |
             const author = context.payload.pull_request.user.login;
             const commentBody = `
-Olá! 👋
+Olá, @${author}! 👋
 
 Obrigado por abrir este PR.
 

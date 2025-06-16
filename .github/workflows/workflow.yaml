@@ -15,7 +15,7 @@ jobs:
           script: |
             const author = context.payload.pull_request.user.login;
             const commentBody = `
-Olá, @${author}! 👋
+Olá! 👋
 
 Obrigado por abrir este PR.
 
@@ -26,9 +26,9 @@ Por favor, verifique se:
 
 Nos avise se precisar de ajuda! 🚀`;
 
-github.rest.issues.createComment({
-  issue_number: context.payload.pull_request.number,
-  owner: context.repo.owner,
-  repo: context.repo.repo,
-  body: commentBody
-});
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });

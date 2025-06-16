@@ -1,9 +1,10 @@
-name: Continuos Integration
+name: Continuous Integration
 
 on:
   pull_request:
     branches:
       ['main']
+    types: [opened]
 
 jobs: 
   comment:
@@ -26,9 +27,9 @@ Por favor, verifique se:
 
 Nos avise se precisar de ajuda! 🚀`;
 
-  github.rest.issues.createComment({
-    issue_number: context.payload.pull_request.number,
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    body: commentBody
-  });
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });

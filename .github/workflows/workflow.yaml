@@ -13,24 +13,6 @@ jobs:
     steps:
       - name: Instructions on the PR
         if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const author = context.payload.pull_request.user.login;
-            const commentBody = `Olá, @${author}! 👋
-
-            Obrigado por abrir este PR.
-
-            Por favor, verifique se:
-            - [ ] Todos os testes estão passando
-            - [ ] O PR está vinculado a uma issue (se aplicável)
-            - [ ] Você preencheu a descrição do PR com detalhes claros
-
-            Nos avise se precisar de ajuda! 🚀`;
-
-            github.rest.issues.createComment({
-              issue_number: context.payload.pull_request.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: commentBody
-            });
+        uses: godkelvin/comment-on-pr-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

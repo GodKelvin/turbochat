@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Instructions on the PR
         if: github.event.pull_request.head.repo.full_name == github.repository
-        uses: godkelvin/comment-on-pr-action@v2
+        uses: godkelvin/comment-on-pr-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
